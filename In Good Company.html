@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>In Good Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600&family=DM+Sans:wght@400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
+<style>
+:root{--brown:#513229;--cream:#F4F1E2;--sky:#D8EBF9;--butter:#FCE6B7;--sage:#D7D7B1;--bg:var(--cream);--ink:var(--brown);--card:#fff9;--line:#51322940;--hi:var(--sky);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1a15;--ink:#F4F1E2;--card:#ffffff10;--line:#F4F1E240;--hi:#3b4a55;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2a1a15;--ink:#F4F1E2;--card:#ffffff10;--line:#F4F1E240;--hi:#3b4a55;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Unbounded,"DM Sans",sans-serif;font-weight:600;line-height:1.15;margin:0 0 .6em}
+h1{font-size:clamp(2.2rem,7vw,4.4rem)}h2{font-size:clamp(1.5rem,4vw,2.2rem)}h3{font-size:1.05rem}
+p{max-width:62ch;margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:Shrikhand,serif;font-size:1.4rem;text-decoration:none;white-space:nowrap}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-weight:500;font-size:.95rem;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none}nav a:hover{text-decoration:underline}
+.hero{background:var(--hi);padding:88px 0 80px}
+.hero .big{font-family:Shrikhand,serif;font-weight:400;font-size:clamp(3.4rem,16vw,10rem);line-height:.95;margin:0 0 .25em;letter-spacing:.01em}
+.hero p.lead{font-size:1.25rem;max-width:34ch}
+.btn{display:inline-block;background:var(--brown);color:var(--cream);border:2px solid var(--brown);font:700 1rem "DM Sans",sans-serif;padding:13px 26px;border-radius:999px;text-decoration:none;cursor:pointer}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn:not(.alt){background:var(--cream);color:var(--brown);border-color:var(--cream)}}
+:root[data-theme="dark"] .btn:not(.alt){background:var(--cream);color:var(--brown);border-color:var(--cream)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;list-style:none;padding:0;margin:28px 0 0;counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--ink);padding-top:12px}
+.steps li::before{content:counter(s);font-family:Shrikhand,serif;font-size:2rem;display:block}
+.steps b{display:block;margin-bottom:4px}
+.tint{background:var(--butter);color:#513229}
+.tint .chips span{background:#F4F1E2}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chips span{background:var(--card);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-weight:500}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:760px){.split{grid-template-columns:1fr}nav ul{display:none}section{padding:56px 0}}
+.facts{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.facts li{padding:14px 18px;border-bottom:1px solid var(--line)}.facts li:last-child{border:0}
+.facts b{display:inline-block;min-width:92px}
+form{display:grid;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+label,legend{font-weight:700;font-size:.95rem}
+small{display:block;font-weight:400;opacity:.8}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;margin-top:6px;font:inherit;color:inherit;background:var(--bg);border:1.5px solid var(--ink);border-radius:10px;padding:11px 13px}
+fieldset{border:0;padding:0;margin:0}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:6px}
+.checks label{font-weight:400;display:flex;gap:8px;align-items:center}
+.msg{min-height:1.4em;font-weight:700;margin:0}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0}
+footer{padding:36px 0;text-align:center;border-top:1px solid var(--line)}
+footer .logo{font-size:1.6rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="#top">I·G·C</a>
+<ul><li><a href="#how">How it works</a></li><li><a href="#join">Join</a></li><li><a href="#faq">Q&amp;A</a></li><li><a href="#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<h1 class="big">In Good Company</h1>
+<p class="lead">A hobby club where you swap skills with new people and leave with real friends.</p>
+<p>Teach something you love, learn something you’ve been curious about, and meet people who showed up to meet you too. No cliques, no pressure, and no need to bring a friend.</p>
+<div class="row"><a class="btn" href="#join">Join the club</a><a class="btn alt" href="#how">See how it works</a></div>
+</div></header>
+
+<section id="how"><div class="wrap">
+<h2>Friends are easier to make when there’s something to do</h2>
+<p>Most clubs are built around one interest, and most are full by the end of freshman year. In Good Company is built for everyone who’s new to the crowd: sophomores, juniors, transfers, and anyone who just moved off campus. Everyone comes ready to meet people, and most come on their own.</p>
+<ol class="steps">
+<li><b>Sign up</b>Tell us one skill you can teach and what you’d like to learn.</li>
+<li><b>Get matched</b>We pair you with someone new, so you always have a partner.</li>
+<li><b>Swap skills</b>Spend 15 minutes teaching, then 15 minutes learning.</li>
+<li><b>Keep in touch</b>Hang out over snacks and leave with new contacts and plans.</li>
+</ol>
+</div></section>
+
+<section class="tint"><div class="wrap split">
+<div>
+<h2>Teach anything, even something small</h2>
+<p>A skill doesn’t have to be impressive. If you can show it in 15 minutes, it counts.</p>
+<div class="chips"><span>Origami cranes</span><span>Watercolor basics</span><span>3 ukulele chords</span><span>Perspective sketching</span><span>Folding dumplings</span><span>Knife skills</span><span>Surf wax and swell charts</span><span>Bike tube patching</span></div>
+</div>
+<ul class="facts" style="color:#513229;background:#fff8">
+<li><b>Next up</b>Beta 01: art, crafts and music</li>
+<li><b>Where</b>A park in San Luis Obispo (we text you the exact spot)</li>
+<li><b>Group</b>About 20 people</li>
+<li><b>Cost</b>Free, with snacks and drinks</li>
+<li><b>Who</b>Cal Poly students</li>
+</ul>
+</div></section>
+
+<section id="join"><div class="wrap split">
+<div>
+<h2>Join the club</h2>
+<p>Sign up to hold a spot at our first event. We’ll text you the park location and confirm your spot once we’ve verified you’re a student.</p>
+<p>New events will open each month, and signing up once adds you to the list.</p>
+</div>
+<form id="signup" novalidate>
+<div><label for="n1">Name</label><input id="n1" type="text" name="name" required autocomplete="name"></div>
+<div><label for="e1">Cal Poly email<small>Just to verify you’re a student</small></label><input id="e1" type="email" name="email" required autocomplete="email"></div>
+<div><label for="p1">Phone number<small>So we can text you the park location and confirm your spot</small></label><input id="p1" type="tel" name="phone" required autocomplete="tel"></div>
+<div><label for="t1">What’s one 15-minute skill you can teach?<small>Keep it simple: folding an origami crane, basic watercolor, 3 ukulele chords</small></label><input id="t1" type="text" name="teach" required></div>
+<fieldset><legend>What do you want to learn?</legend><div class="checks">
+<label><input type="checkbox" name="learn" value="Visual Arts &amp; Drawing"> Visual arts &amp; drawing</label>
+<label><input type="checkbox" name="learn" value="Crafts &amp; Making"> Crafts &amp; making</label>
+<label><input type="checkbox" name="learn" value="Music &amp; Rhythm"> Music &amp; rhythm</label>
+</div></fieldset>
+<button class="btn" type="submit">Save my spot</button>
+<p class="msg" role="status" id="m1"></p>
+</form>
+</div></section>
+
+<section id="faq" class="tint"><div class="wrap">
+<h2>Questions and answers</h2>
+<details><summary>Do I need to bring a friend?</summary><p>No. Most people come alone, and we’ll tell you that in advance. You’ll be paired with a partner as soon as the swap starts.</p></details>
+<details><summary>What if I’m not good at anything?</summary><p>You’re good at more than you think. Anything you can show in 15 minutes works, from a knot to a coffee brewing trick.</p></details>
+<details><summary>How much does it cost?</summary><p>Our first event is free and comes with snacks and drinks. Later events will be low-cost, about $5 to $20 for a one- to two-hour session.</p></details>
+<details><summary>What happens at an event?</summary><p>We start with check-in and a quick warm-up in small groups, then two 15-minute skill swaps, a short show-and-tell, and open hangout time.</p></details>
+<details><summary>Do I need to be a Cal Poly student?</summary><p>For now, yes. We’re starting with Cal Poly students, especially sophomores, juniors and transfers, and we plan to open up to more young adults in San Luis Obispo.</p></details>
+<details><summary>What if I don’t click with my partner?</summary><p>You’ll swap with one person, then everyone mingles. You’ll meet several people over the afternoon, so one pairing is never the whole event.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap split">
+<div>
+<h2>Still have a question?</h2>
+<p>Ask us anything, suggest a skill you’d like to see taught, or tell us about a venue or food spot that wants to partner with us.</p>
+</div>
+<form id="contactForm" novalidate>
+<div><label for="n2">Name</label><input id="n2" type="text" name="name" required autocomplete="name"></div>
+<div><label for="e2">Email</label><input id="e2" type="email" name="email" required autocomplete="email"></div>
+<div><label for="q2">Your message</label><textarea id="q2" name="message" rows="5" required></textarea></div>
+<button class="btn" type="submit">Send message</button>
+<p class="msg" role="status" id="m2"></p>
+</form>
+</div></section>
+
+<footer><div class="wrap"><a class="logo" href="#top">I·G·C</a><p style="margin:8px auto 0">In Good Company · San Luis Obispo, CA</p></div></footer>
+
+<script>
+(function(){
+function wire(formId,msgId,coll,fields,ok){
+  var f=document.getElementById(formId),m=document.getElementById(msgId);
+  f.addEventListener("submit",async function(e){
+    e.preventDefault();
+    var d={},bad=false;
+    new FormData(f).forEach(function(v,k){if(d[k]!==undefined){d[k]=[].concat(d[k],v)}else{d[k]=v}});
+    fields.forEach(function(k){if(!d[k]||!String(d[k]).trim())bad=true});
+    if(bad||!f.checkValidity()&&f.querySelector("[type=email]")&&!f.querySelector("[type=email]").validity.valid){m.textContent="Please fill in every required field with a valid email.";return}
+    d.sentAt=new Date().toISOString();
+    try{
+      var db=await claude.use("db");
+      if(!db)throw new Error("none");
+      var u=await claude.use("user");if(!u)throw new Error("none");var uid=await u.id();
+      if(coll==="signups"){await db.collection("signups").doc(uid).set(d)}else{await db.collection("messages/"+uid+"/items").doc(crypto.randomUUID()).set(d)}
+      f.reset();m.textContent=ok;
+    }catch(err){
+      m.textContent="We couldn’t save that right now. Please message us on Instagram instead.";
+    }
+  });
+}
+wire("signup","m1","signups",["name","email","phone","teach"],"You’re on the list! We’ll text you the park location soon.");
+wire("contactForm","m2","messages",["name","email","message"],"Thanks! We’ll get back to you soon.");
+})();
+</script>
+</body>
+</html>
