@@ -47,6 +47,7 @@ nav a{text-decoration:none}nav a:hover{text-decoration:underline}
 .facts{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:18px;background:var(--card)}
 .facts li{padding:14px 18px;border-bottom:1px solid var(--line)}.facts li:last-child{border:0}
 .facts b{display:inline-block;min-width:92px}
+.formbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;color:#513229}
 form{display:grid;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
 label,legend{font-weight:700;font-size:.95rem}
 small{display:block;font-weight:400;opacity:.8}
@@ -107,22 +108,11 @@ footer .logo{font-size:1.6rem}
 <section id="join"><div class="wrap split">
 <div>
 <h2>Join the club</h2>
-<p>Sign up to hold a spot at our first event. We’ll text you the park location and confirm your spot once we’ve verified you’re a student.</p>
+<p>Fill out the form to hold a spot at our first event. We’ll text you the park location and confirm your spot once we’ve verified you’re a student.</p>
 <p>New events will open each month, and signing up once adds you to the list.</p>
 </div>
-<form id="signup" novalidate>
-<div><label for="n1">Name</label><input id="n1" type="text" name="name" required autocomplete="name"></div>
-<div><label for="e1">Cal Poly email<small>Just to verify you’re a student</small></label><input id="e1" type="email" name="email" required autocomplete="email"></div>
-<div><label for="p1">Phone number<small>So we can text you the park location and confirm your spot</small></label><input id="p1" type="tel" name="phone" required autocomplete="tel"></div>
-<div><label for="t1">What’s one 15-minute skill you can teach?<small>Keep it simple: folding an origami crane, basic watercolor, 3 ukulele chords</small></label><input id="t1" type="text" name="teach" required></div>
-<fieldset><legend>What do you want to learn?</legend><div class="checks">
-<label><input type="checkbox" name="learn" value="Visual Arts &amp; Drawing"> Visual arts &amp; drawing</label>
-<label><input type="checkbox" name="learn" value="Crafts &amp; Making"> Crafts &amp; making</label>
-<label><input type="checkbox" name="learn" value="Music &amp; Rhythm"> Music &amp; rhythm</label>
-</div></fieldset>
-<button class="btn" type="submit">Save my spot</button>
-<p class="msg" role="status" id="m1"></p>
-</form>
+<div class="row" style="margin:0 0 16px"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfmhPIrF49lJlR_ZDK4Pkt7Jq0nBbHfjb9-CKp2cFZ3FEnthA/viewform" target="_blank" rel="noopener">Open the sign-up form</a></div>
+<div class="formbox"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfmhPIrF49lJlR_ZDK4Pkt7Jq0nBbHfjb9-CKp2cFZ3FEnthA/viewform?embedded=true" title="In Good Company sign-up form" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Loading…</iframe><p style="margin:12px 0 0;font-size:.9rem">Form not showing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmhPIrF49lJlR_ZDK4Pkt7Jq0nBbHfjb9-CKp2cFZ3FEnthA/viewform" target="_blank" rel="noopener">Open it in a new tab</a>.</p></div>
 </div></section>
 
 <section id="faq" class="tint"><div class="wrap">
@@ -173,7 +163,6 @@ function wire(formId,msgId,coll,fields,ok){
     }
   });
 }
-wire("signup","m1","signups",["name","email","phone","teach"],"You’re on the list! We’ll text you the park location soon.");
 wire("contactForm","m2","messages",["name","email","message"],"Thanks! We’ll get back to you soon.");
 })();
 </script>
